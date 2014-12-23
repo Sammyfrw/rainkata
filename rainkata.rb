@@ -48,6 +48,7 @@ class Main
   end
 
   def run_kata
+    puts "Running kata"
   end
 
 end
