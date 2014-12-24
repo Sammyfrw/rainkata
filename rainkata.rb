@@ -1,7 +1,9 @@
+require "./Supermarket"
+
 class Main
   def initialize
     @user_choice = ""
-    KATA = %w(Fizz Fibb Hotel Zombie)
+    KATA = %w(Supermarket Doors)
     QUIT = "QUIT"
   end
 
@@ -20,7 +22,7 @@ class Main
 
   def query_for_kata
     while inalid_choice?
-      prompt_choice
+      prompt_choices
       @user_choice = gets.chomp
       validate_choice
     end
@@ -39,17 +41,20 @@ class Main
     end
   end
 
-  def quit_if_commanded
-    @user_choice = QUIT
-  end
-
   def invalid_choice?
     !KATA.include?(@user_choice)
   end
 
-  def run_kata
-    puts "Running kata"
+  def quit_if_commanded
+    @user_choice = QUIT
+    exit
   end
 
+
+  def run_kata
+    puts "Running kata: " + @user_choice
+    kata = @user_choice.new
+    kata.run
+  end
 end
 
