@@ -3,7 +3,7 @@ require "./Supermarket"
 class Main
   def initialize
     @user_choice = ""
-    KATA = %w(Supermarket Doors)
+    KATA = %w(Supermarket)
     QUIT = "QUIT"
   end
 

@@ -15,4 +15,11 @@ class Supermarket
     PRODUCTS = %w(Apple Oranges Grapes Banannas)
     @prices_per_kilo = []
   end
+
+  def run
+    welcome_to_supermarket
+    list_items
+    ask_for_prices
+    generate_quantities
+  end
 end
