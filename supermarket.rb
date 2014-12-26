@@ -22,4 +22,9 @@ class Supermarket
     ask_for_prices
     generate_quantities
   end
+
+  def welcome_to_supermarket
+    puts "Welcome to the supermarket!"
+    puts "You will need to add prices per kilogram for each item on the list."
+  end
 end
