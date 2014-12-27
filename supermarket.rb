@@ -27,4 +27,22 @@ class Supermarket
     puts "Welcome to the supermarket!"
     puts "You will need to add prices per kilogram for each item on the list."
   end
+
+  def list_items
+    puts "These are the items currently on the list: "
+    puts PRODUCTS
+  end
+
+  def ask_for_prices
+    PRODUCTS.each do |product|
+      puts "How would you price: " + product + "?"
+      @prices_per_kilo.push(gets.chomp)
+    end
+  end
+
+  def generate_quantities
+    puts "Here are the prices you've listed:"
+    puts @prices_per_kilo
+  end
+
 end
