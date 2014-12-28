@@ -23,6 +23,8 @@ class Supermarket
     generate_quantities
   end
 
+  private
+
   def welcome_to_supermarket
     puts "Welcome to the supermarket!"
     puts "You will need to add prices per kilogram for each item on the list."
@@ -44,5 +46,4 @@ class Supermarket
     puts "Here are the prices you've listed:"
     puts @prices_per_kilo
   end
-
 end
