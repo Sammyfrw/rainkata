@@ -13,7 +13,7 @@
 class Supermarket
   def initialize
     PRODUCTS = %w(Apple Oranges Grapes Banannas)
-    @prices_per_kilo = []
+    @prices_per_kilo = {}
   end
 
   def run
@@ -38,7 +38,7 @@ class Supermarket
   def ask_for_prices
     PRODUCTS.each do |product|
       puts "How would you price: " + product + "?"
-      @prices_per_kilo.push(gets.chomp)
+      @prices_per_kilo[product: gets.chomp]
     end
   end
 
