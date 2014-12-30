@@ -46,7 +46,7 @@ class Main
   end
 
   def quit_if_commanded
-    @user_choice = QUIT
+    @user_choice == QUIT
     exit
   end
 

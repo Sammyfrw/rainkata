@@ -19,7 +19,7 @@ class Supermarket
   def run
     welcome_to_supermarket
     list_items
-    ask_for_prices
+    get_product_prices
     generate_quantities
   end
 
@@ -35,6 +35,11 @@ class Supermarket
     puts PRODUCTS
   end
 
+  def get_product_prices
+    ask_for_prices
+    confirm_prices
+  end
+
   def ask_for_prices
     PRODUCTS.each do |product|
       puts "How would you price: " + product + "?"
@@ -42,8 +47,35 @@ class Supermarket
     end
   end
 
-  def generate_quantities
+  def confirm_prices
+    are_prices_correct?
+    @user_choice = gets.chomp
+    validate_choice
+  end
+
+  def are_prices_correct?
     puts "Here are the prices you've listed:"
     puts @prices_per_kilo
+    print "Is that correct? Y/N >"
+  end
+
+  def validate_choice
+    reprice_if_incorrect
+    invalid_choice?
+  end
+
+  def reprice_if_incorrect
+    @user_choice == N
+    ask_for_prices
+  end
+
+  def invalid_choice?
+    if @user_choice != Y
+      puts "Invalid choice."
+      are_prices_correct?
+    end
+  end
+
+  def generate_quantities
   end
 end
