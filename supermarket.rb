@@ -60,13 +60,14 @@ class Supermarket
   end
 
   def validate_choice
-    reprice_if_incorrect
+    if prices_incorrect?
+      ask_for_prices
+    end
     invalid_choice?
   end
 
-  def reprice_if_incorrect
+  def prices_incorrect?
     @user_choice == N
-    ask_for_prices
   end
 
   def invalid_choice?

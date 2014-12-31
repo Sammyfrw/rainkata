@@ -1,7 +1,7 @@
 Rainkata
 =========================
 
-Hello!
+HAPPY NEW YEAR!
 ------
 
 This is a repository for a collection of kata exercises that are taken from
